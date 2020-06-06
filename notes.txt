@@ -1,0 +1,38 @@
+FIRST TURN
+- all players create a sketch according to a randomly-assigned prompt
+- Players submit drawings when done, or auto after timer (30 sec? 60 sec?)
+- drawings are converted to JSON and stored (either in memory or DB, probably the latter)
+- once all drawings are collected, turn is over
+
+SETUP FOR NEXT TURN
+- each sketch is "passed" from its author to the next player in the list
+- drawing JSON is sent to player and rendered as a readOnly sketch
+
+SECOND TURN
+- each player has a locked sketch image passed from "adjacent" player
+- players enter a title/description for the sketch into a text box
+- titles are submitted when done, or auto-collected after a timer
+- title data is saved in some kind of association with the sketch data
+- once all titles are collected, turn is over
+
+SETUP FOR NEXT TURN
+- each title is "passed" from its author to the next player in the list
+- title text is sent to player and rendered to page as a prompt for next sketch
+
+
+
+******
+
+TODO:
+* Build basic game with 3 players in same browser window. Write logic to store sketch/title associations, "pass" data from player to player, and detect when circle is complete. This will flesh out the data storage architecture while limiting the complexity of async/network/etc concerns
+* decide on how to organize and store data based on these test runs. Linked list of sketch objects for each player?
+
+* make top-level app a sort of mock "server"--keep centralized logic here, and keep single-client logic inside child components (this mostly just applies to first iteration where 3 game instances exist on one page) i.e.:
+  APP - handles collection and distribution of prompts/sketches
+    GAME INSTANCE - each represents a "client"
+    GAME INSTANCE
+    GAME INSTANCE
+
+* Would it make sense to just extract the "server" store from React entirely? Put it on window for the sake of this mockup?
+
+* From State Management FEM video: React state is intended to be used for data which informs render changes--if the change doesn't need to cause a re-render, the data doesn't need to be in React state

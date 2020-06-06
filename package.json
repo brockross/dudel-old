@@ -1,0 +1,31 @@
+{
+  "name": "dudle",
+  "version": "0.1.0",
+  "description": "telestrations but on the World Wide Web",
+  "main": "index.js",
+  "scripts": {
+    "build": "parcel build index.html",
+    "start": "parcel index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Brock Ross",
+  "license": "ISC",
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.10.7",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "jquery": "^3.5.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "sketchpad": "^0.1.0",
+    "styled": "^1.0.0",
+    "styled-components": "^5.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3"
+  }
+}
